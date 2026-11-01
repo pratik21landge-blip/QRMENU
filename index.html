@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MBA Bhurji™ | The Classic Rural Taste | Menu</title>
+  <meta name="description" content="Official QR Code Menu for MBA Bhurji™ - The Classic Rural Taste, Kondhwa, Pune. All dishes in one classic menu card.">
+
+  <!-- Typography matching https://mba-bhurgi.vercel.app/ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-left">
+        <span class="live-status"><span class="dot"></span> Open Today: 8:00 AM - 11:00 PM</span>
+        <span class="separator">&bull;</span>
+        <span class="location-brief">Near Sinhgad College, Kondhwa, Pune</span>
+      </div>
+      <div class="top-right">
+        <button class="top-qr-btn" id="openQrModalBtn">
+          <i data-lucide="qr-code"></i>
+          <span>Table QR Standee</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Clean Brand Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="brand-link">
+        <img src="assets/logo.jpg" alt="MBA Bhurji Logo" class="brand-logo-img">
+        <div class="brand-text">
+          <div class="brand-name">MBA <span>BHURJI</span><span class="tm">™</span></div>
+          <div class="brand-tagline">The Classic Rural Taste</div>
+        </div>
+      </div>
+
+      <div class="header-badges">
+        <span class="header-badge-item"><i data-lucide="award"></i> 100% Amul Butter</span>
+        <span class="header-badge-item"><i data-lucide="star" class="star-gold"></i> 4.8 Rating</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Unified Menu Section -->
+  <main class="menu-main">
+    <div class="container">
+      
+      <!-- Authentic Notice Card -->
+      <div class="menu-notice-card">
+        <div class="notice-icon">🧈</div>
+        <div class="notice-text">
+          <strong>Authentic Desi Preparation:</strong> All egg bhurji dishes are cooked on cast-iron tawa in 100% pure Amul butter, served fresh with <strong>2 butter-roasted soft pavs</strong>, freshly sliced onions, and lemon wedges.
+        </div>
+      </div>
+
+      <!-- ONE UNIFIED MENU CARD (All Sections in One Continuous Card) -->
+      <div class="menu-card-container" id="menuCardContainer">
+        
+        <!-- Menu Card Top Header -->
+        <div class="menu-card-header">
+          <div class="header-logo-row">
+            <img src="assets/logo.jpg" alt="Logo" class="menu-header-logo">
+            <div>
+              <h1 class="menu-restaurant-title">MBA BHURJI<span class="tm">™</span></h1>
+              <p class="menu-restaurant-tagline">The Classic Rural Taste &bull; Kondhwa, Pune</p>
+            </div>
+          </div>
+          <div class="menu-service-badge">
+            <span>Dine-In &bull; Table Service &bull; Takeaway</span>
+          </div>
+        </div>
+
+        <div class="card-inner-divider"></div>
+
+        <!-- Section 1: Signature Egg Bhurji -->
+        <div class="menu-block">
+          <div class="block-heading">
+            <span class="block-icon">🍳</span>
+            <div>
+              <h2 class="block-title">Signature Egg Bhurji</h2>
+              <span class="block-hindi">सिग्नेचर एग भुर्जी</span>
+            </div>
+          </div>
+          <div class="block-grid" id="grid-signature"></div>
+        </div>
+
+        <!-- Section 2: Half Fry & Boiled Specials -->
+        <div class="menu-block">
+          <div class="block-heading">
+            <span class="block-icon">🍳</span>
+            <div>
+              <h2 class="block-title">Half Fry & Boiled Specials</h2>
+              <span class="block-hindi">हाफ फ्राय व बॉईल स्पेशल</span>
+            </div>
+          </div>
+          <div class="block-grid" id="grid-halffry"></div>
+        </div>
+
+        <!-- Section 3: Fluffy Tawa Omelettes -->
+        <div class="menu-block">
+          <div class="block-heading">
+            <span class="block-icon">🫓</span>
+            <div>
+              <h2 class="block-title">Fluffy Tawa Omelettes</h2>
+              <span class="block-hindi">फ्लफी ऑम्लेट</span>
+            </div>
+          </div>
+          <div class="block-grid" id="grid-omelette"></div>
+        </div>
+
+        <!-- Section 4: Student & Meal Combos -->
+        <div class="menu-block">
+          <div class="block-heading">
+            <span class="block-icon">🍱</span>
+            <div>
+              <h2 class="block-title">Student & Meal Combos</h2>
+              <span class="block-hindi">विद्यार्थी व जेवण कॉम्बो</span>
+            </div>
+          </div>
+          <div class="block-grid" id="grid-combos"></div>
+        </div>
+
+        <!-- Section 5: Pav, Breads & Extras -->
+        <div class="menu-block">
+          <div class="block-heading">
+            <span class="block-icon">🍞</span>
+            <div>
+              <h2 class="block-title">Pav, Breads & Extras</h2>
+              <span class="block-hindi">पाव व ब्रेड्स</span>
+            </div>
+          </div>
+          <div class="block-grid" id="grid-pav"></div>
+        </div>
+
+        <!-- Section 6: Chai & Coolers -->
+        <div class="menu-block">
+          <div class="block-heading">
+            <span class="block-icon">☕</span>
+            <div>
+              <h2 class="block-title">Chai & Coolers</h2>
+              <span class="block-hindi">चहा व शीतपेये</span>
+            </div>
+          </div>
+          <div class="block-grid" id="grid-beverages"></div>
+        </div>
+
+        <!-- Menu Card Footer Info -->
+        <div class="menu-card-footer">
+          <div class="dietary-notes">
+            <div class="d-note"><span class="egg-dot-symbol"></span> Prepared with Farm-Fresh Eggs</div>
+            <div class="d-note"><i data-lucide="check-circle-2"></i> 100% Pure Amul Butter</div>
+            <div class="d-note"><i data-lucide="flame"></i> Custom Spice (Kolhapuri / Mild) on Request</div>
+          </div>
+          <div class="menu-footer-actions">
+            <button class="btn btn-outline-dark btn-sm" onclick="window.print()">
+              <i data-lucide="printer"></i> Print Menu Card
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Sticky Bottom Order Tray -->
+  <div class="order-tray" id="orderTray">
+    <div class="container tray-container">
+      <div class="tray-info">
+        <span class="tray-label" id="trayCount">0 items selected</span>
+        <span class="tray-price" id="trayTotal">₹0</span>
+      </div>
+      <button class="btn btn-primary btn-sm tray-action" id="viewTrayBtn">
+        <span>View Table Order Slip</span>
+        <i data-lucide="arrow-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Order Slip Modal -->
+  <div class="modal" id="slipModal">
+    <div class="modal-backdrop" id="closeSlipBackdrop"></div>
+    <div class="modal-sheet">
+      <div class="sheet-header">
+        <div class="sheet-title-group">
+          <h3>Your Table Order Slip</h3>
+          <p>Show this to the counter or captain</p>
+        </div>
+        <button class="modal-close" id="closeSlipBtn"><i data-lucide="x"></i></button>
+      </div>
+
+      <div class="sheet-body" id="slipItemsList"></div>
+
+      <div class="sheet-footer">
+        <div class="summary-line">
+          <span>Items Total</span>
+          <span id="slipSubtotal">₹0</span>
+        </div>
+        <div class="summary-line font-bold total-line">
+          <span>Estimated Total</span>
+          <span id="slipFinalTotal" class="gold-text">₹0</span>
+        </div>
+        <div class="sheet-actions">
+          <button class="btn btn-secondary" id="clearAllSlipBtn">Reset</button>
+          <button class="btn btn-primary" id="copyOrderBtn">
+            <i data-lucide="copy"></i> Copy Order Details
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Table QR Standee Modal -->
+  <div class="modal" id="qrModal">
+    <div class="modal-backdrop" id="closeQrBackdrop"></div>
+    <div class="modal-card">
+      <button class="modal-close" id="closeQrBtn"><i data-lucide="x"></i></button>
+      
+      <div class="standee-frame" id="printableStandee">
+        <div class="standee-header">
+          <img src="assets/logo.jpg" alt="Logo" class="standee-logo">
+          <div class="standee-brand">MBA BHURJI<span class="tm">™</span></div>
+          <div class="standee-tagline">The Classic Rural Taste</div>
+        </div>
+
+        <div class="standee-scan-badge">SCAN FOR DIGITAL MENU</div>
+
+        <div class="qr-box">
+          <div id="qrcode"></div>
+        </div>
+
+        <div class="standee-table" id="standeeTableDisplay">TABLE # 01</div>
+        <p class="standee-instructions">Scan with Google Lens / Camera / PhonePe</p>
+      </div>
+
+      <div class="standee-controls">
+        <div class="input-group">
+          <label for="tableInput">Table Number:</label>
+          <input type="text" id="tableInput" value="Table 1" placeholder="e.g. Table 4">
+        </div>
+        <div class="modal-buttons">
+          <button class="btn btn-outline-dark" id="printStandeeBtn"><i data-lucide="printer"></i> Print Standee</button>
+          <button class="btn btn-primary" id="shareMenuBtn"><i data-lucide="share-2"></i> Share Link</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Pop -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand-side">
+        <div class="footer-logo-row">
+          <img src="assets/logo.jpg" alt="Logo" class="footer-logo">
+          <div>
+            <div class="footer-brand-name">MBA BHURJI<span class="tm">™</span></div>
+            <div class="footer-tagline">The Classic Rural Taste</div>
+          </div>
+        </div>
+        <p class="footer-about">
+          Serving authentic rural and roadside egg bhurji preparations in Kondhwa, Pune. Crafted with 100% Amul butter and farm-fresh eggs.
+        </p>
+      </div>
+
+      <div class="footer-info-side">
+        <h5 class="footer-heading">Outlet Details</h5>
+        <ul class="footer-links">
+          <li><strong>Address:</strong> Near Sinhgad College, Opp KBC Bldg, Kondhwa, Pune 411048</li>
+          <li><strong>Timings:</strong> 8:00 AM to 11:00 PM (Everyday)</li>
+          <li><strong>UPI:</strong> GPay / PhonePe / Paytm / Cash</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 MBA Bhurji™. All rights reserved. The Classic Rural Taste is a trademark of MBA Bhurji.</p>
+        <p>Location: Kondhwa Khurd, Pune, Maharashtra</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
